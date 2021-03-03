@@ -14,9 +14,6 @@
     </description>
 
     <author>Haythem OUEDERNI - haythem@nirbyapp.com </author>
-
-    <keywords>cordova,whitelist,ios9,ecosystem:cordova,ordova-ios</keywords>
-    
     <license>MIT</license>
     
     <engines>
@@ -25,27 +22,13 @@
         <engine name="cordova" version=">=3.5.0" />
     </engines>
     
-    
-    
     <!-- ios -->
     <platform name="ios">
-        
-        <!-- iOS9 whitelisting -->
-        <config-file target="*-Info.plist" parent="LSApplicationQueriesSchemes">
+        <config-file target="*-Info.plist" platform="ios" parent="CFBundleLocalizations" overwrite="true">
             <array>
-                <string>twitter</string>
-                <string>fb</string>
-                <string>whatsapp</string>
-                <string>itms-apps</string>
-                <string>youtube</string>
-                <string>soundcloud</string>
-                <string>fb-messenger</string>
-                <string>instagram</string>
+                <string>es</string>
             </array>
-        </config-file>
-        
-        
-        
+        </config-file>        
     </platform>
     
 </plugin>
