@@ -27,10 +27,16 @@
         <config-file target="*-Info.plist" platform="ios" parent="CFBundleLocalizations" overwrite="true">
             <array>
                 <string>es</string>
-		        <string>pt</string>
-		        <string>fr</string>
-		        <string>it</string>
-		        <string>de</string>
+		<string>pt</string>
+		<string>fr</string>
+		<string>it</string>
+		<string>de</string>
+                <string>bg</string>
+                <string>cz</string>
+                <string>nl</string>
+                <string>pl</string>
+                <string>ro</string>
+                <string>sk</string>
             </array>
         </config-file>        
     </platform>
