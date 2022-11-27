@@ -38,7 +38,13 @@
                 <string>ro</string>
                 <string>sk</string>
             </array>
-        </config-file>        
+        </config-file>
+	<config-file platform="ios" target="*-Info.plist" parent="ITSAppUsesNonExemptEncryption">
+      		<false/>
+    	</config-file>
+	<config-file platform="ios" target="*-Info.plist" parent="CFBundleDevelopmentRegion">
+      		<string>en-GB</string>
+    	</config-file>           
     </platform>
     
 </plugin>
