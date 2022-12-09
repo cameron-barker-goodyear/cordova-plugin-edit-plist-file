@@ -27,6 +27,7 @@
         <config-file target="*-Info.plist" platform="ios" parent="CFBundleLocalizations" overwrite="true">
             <array>
                 <string>es</string>
+		<string>en</string>
 		<string>pt</string>
 		<string>fr</string>
 		<string>it</string>
