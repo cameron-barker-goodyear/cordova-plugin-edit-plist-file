@@ -1,37 +1,40 @@
+
 <?xml version="1.0" encoding="UTF-8"?>
 <plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
     xmlns:android="http://schemas.android.com/apk/res/android"
     id="cordova-plugin-edit-plist-file"
-    version="0.0.3">
-    
+    version="0.0.4">
+
     <name>Edit Plist file</name>
-    
+
     <description>
-        A cordova "plugin" that helps you indicate the modifications on the iOS's *-info.plist file.
-        So it avoids you to directly edit the *-info.plist file.
-        For example it is used to whitelist some schemes for ios9.
-        This plugin was initially created to avoid iOS 9 problems that prevent opening other apps from your own app because some used plugins aren't updated to take into consideration the new specification for iOS 9.
+        A cordova plugin to modify the iOS Info.plist file.
+        Includes application localizations, encryption settings,
+        camera and microphone usage descriptions.
     </description>
 
-    <author>Haythem OUEDERNI - haythem@nirbyapp.com </author>
+    <author>Haythem OUEDERNI - haythem@nirbyapp.com</author>
     <license>MIT</license>
-    
+
     <engines>
-        <!-- Requires > 3.3.* because of the custom Framework tag for iOS [CB-5238] -->
-        <!-- Requires > 3.5.0 because of the custom Framework tag for Android [CB-6698] -->
         <engine name="cordova" version=">=3.5.0" />
     </engines>
-    
-    <!-- ios -->
+
+    <!-- iOS -->
     <platform name="ios">
-        <config-file target="*-Info.plist" platform="ios" parent="CFBundleLocalizations" overwrite="true">
+
+        <!-- Supported languages -->
+        <config-file target="*-Info.plist"
+            platform="ios"
+            parent="CFBundleLocalizations"
+            overwrite="true">
             <array>
                 <string>es</string>
-		<string>en</string>
-		<string>pt</string>
-		<string>fr</string>
-		<string>it</string>
-		<string>de</string>
+                <string>en</string>
+                <string>pt</string>
+                <string>fr</string>
+                <string>it</string>
+                <string>de</string>
                 <string>bg</string>
                 <string>cz</string>
                 <string>nl</string>
@@ -40,12 +43,35 @@
                 <string>sk</string>
             </array>
         </config-file>
-	<config-file platform="ios" target="*-Info.plist" parent="ITSAppUsesNonExemptEncryption">
-      		<false/>
-    	</config-file>
-	<config-file platform="ios" target="*-Info.plist" parent="CFBundleDevelopmentRegion">
-      		<string>en-GB</string>
-    	</config-file>           
+
+        <!-- Camera permission -->
+        <config-file target="*-Info.plist"
+            platform="ios"
+            parent="NSCameraUsageDescription">
+            <string>This application needs access to the camera to take photos, record videos and scan QR codes and barcodes.</string>
+        </config-file>
+
+        <!-- Microphone permission -->
+        <config-file target="*-Info.plist"
+            platform="ios"
+            parent="NSMicrophoneUsageDescription">
+            <string>This application needs access to the microphone when recording videos.</string>
+        </config-file>
+
+        <!-- Encryption -->
+        <config-file platform="ios"
+            target="*-Info.plist"
+            parent="ITSAppUsesNonExemptEncryption">
+            <false/>
+        </config-file>
+
+        <!-- Development region -->
+        <config-file platform="ios"
+            target="*-Info.plist"
+            parent="CFBundleDevelopmentRegion">
+            <string>en-GB</string>
+        </config-file>
+
     </platform>
-    
+
 </plugin>
